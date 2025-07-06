@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peluk Kata</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/QK5ZsXq/clouds-night.gif') repeat-x;
+      animation: cloudmove 180s linear infinite;
+      z-index: -2;
+      opacity: 0.2;
+    }
+    @keyframes cloudmove {
+      0% { background-position: 0 0; }
+      100% { background-position: 20000px 0; }
+    }
+    .cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 100;
+      transition: opacity 1s ease;
+    }
+    .cover h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .cover p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+    .cover button {
+      padding: 0.7rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-family: Georgia, serif;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+    .cover button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+    nav {
+      background: rgba(15, 32, 39, 0.5);
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+    nav button {
+      background: rgba(44, 47, 63, 0.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #eeeeee;
+      font-size: 0.95rem;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+    nav button:hover {
+      background: rgba(56, 64, 79, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    }
+    .content {
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      min-height: 100vh;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      backdrop-filter: blur(6px);
+      border-radius: 1rem;
+      margin: 1rem;
+    }
+    .content.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1, h2 {
+      font-weight: normal;
+    }
+    .hidden {
+      display: none;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(15, 32, 39, 0.6);
+      font-size: 0.9rem;
+      backdrop-filter: blur(4px);
+    }
+    a { color: #90cdf4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="cover" id="cover">
+    <h1>Peluk Kata</h1>
+    <p>halaman sunyi yang kutulis dari hati</p>
+    <button onclick="enterSite()">Masuk ke Kata</button>
+  </div>
+<script>function enterSite() {
+  const cover = document.getElementById('cover');
+  cover.style.opacity = '0';
+  setTimeout(() => {
+    cover.style.display = 'none';
+  }, 1000);
+}
+</script>
+  <nav>
+    <button onclick="showSection('beranda')">🌙 Beranda</button>
+    <button onclick="showSection('semangat')">🔥 Semangat</button>
+    <button onclick="showSection('rindu')">💌 Rindu</button>
+    <button onclick="showSection('kehidupan')">🌱 Kehidupan</button>
+    <button onclick="showSection('bangkit')">🕊️ Bangkit</button>
+    <button onclick="showSection('galeri')">🖋️ Galeri</button>
+    <button onclick="showSection('kontak')">📫 Kontak</button>
+  </nav>
+
+  <div id="beranda" class="content active">
+    <h1>"Profil yang Tak Pernah Usai Kutulis"</h1>
+    <p>Aku adalah Zainul Abidin.<p>
+<p>Lahir di kota Tolitoli — kota cengkeh yang harum rindunya tak pernah hilang dari napasku.
+<br>Masa kecilku tumbuh di Perumnas Lorong Panca Bakti II, tempat di mana kata-kata pertama kali kutanam dalam diam.
+
+<p>Kini, aku tinggal di desa Bolobungkang.
+<br>Sebuah desa sunyi yang memberi ruang bagi kata-kata tumbuh seperti benih yang tak pernah berhenti berharap musim hujan datang.
+<br>Aku menulis bukan karena merasa pandai, tapi karena ada hal-hal yang tidak bisa selesai hanya dengan diam.
+
+<p>"Peluk Kata" adalah ladang kecilku — tempat rindu-rindu disemai, harapan dipanen, dan luka-luka diberi nama.
+<br>Jika kau tersesat di malam, semoga kata-kata ini jadi cahaya kecil yang menuntunmu pulang.
+
+</p>
+  </div>
+
+  <div id="semangat" class="content hidden">
+    <h2>Sajak Semangat</h2>
+    <h2>"Yang Terus Menyala"
+<p>Aku tahu,
+<br>ada pagi-pagi yang tak datang dengan jingga,
+<br>hanya langit kelabu dan gelas kopi yang dingin terlalu cepat.
+<br>Tapi aku juga tahu,
+<br>kau tetap bangun—meski dunia enggan menyambut.
+
+<p>Semangat itu,
+<br>bukan soal berlari kencang,
+<br>tapi tentang tak menyerah
+meski langkahmu tertatih di tanah yang licin.
+
+<p>Ada cahaya kecil di dadamu
+<br>yang tak pernah padam meski diludahi badai.
+<br>Yang menyala bukan karena sempurna,
+<br>tapi karena percaya:
+<br>"aku mungkin belum sampai, tapi aku sedang menuju."
+
+<p>Jangan biarkan dunia membuatmu lupa,
+<br>bahwa yang tumbuh pelan pun, tetap tumbuh.
+<br>Dan kamu,
+<br>adalah benih yang tak pernah berhenti mengakar.
+
+
+    <p>Karena pagi tak selalu datang dengan pelangi,<br> tapi semangatmu bisa membuat matahari bersinar dari dalam diri.</p>
+    <p>Jalan ini panjang,<br> tapi benih-benih harapan tak pernah gagal bertumbuh di ladang doa.</p>
+  </div>
+
+  <div id="rindu" class="content hidden">
+    <h2>Sajak Rindu</h2>
+    <p>"Rindu yang Tidak Bisa Dijelaskan"
+<p>Aku tidak sedang menunggumu pulang.
+<br>Aku hanya duduk,
+<br>di tepi waktu
+<br>yang pernah kita lewati bersama.
+
+<p>Rindu itu aneh,
+<br>kadang tak berwujud,
+<br>tapi menyesak di dada seperti genangan yang tak pernah surut.
+
+<p>Aku menulis bukan untuk dibaca,
+<br>tapi untuk bertahan.
+<br>Karena menyebut namamu sudah tak cukup,
+<br>aku menulis segala yang tak bisa kusampaikan.
+
+<p>Ada hal-hal yang tak perlu kembali
+<br>untuk tetap tinggal.
+<br>Dan kamu,
+<br>adalah salah satunya.</p>
+  </div>
+
+  <div id="kehidupan" class="content hidden">
+    <h2>Sajak Kehidupan</h2>
+    <p>"Hidup, Seperti Tanah yang Sering Kita Lupa Sirami"<p></p>
+<br>Hidup tidak selalu menjanjikan musim yang ramah.
+<br>Kadang ia menanam luka,
+<br>agar kita belajar menyembuhkan.
+
+<p>Seperti sawah yang dibiarkan kosong,
+<br>jiwa yang tak disiangi bisa ditumbuhi gulma-gulma putus asa.
+<br>Tapi tenang saja—
+<br>bahkan tanah retak pun bisa menumbuhkan harapan
+<br>jika disirami dengan sabar.
+
+<p>Hidup tidak harus selalu benar.
+<br>Ia hanya perlu dijalani dengan jujur.
+<br>Karena yang tumbuh bukan yang paling cepat,
+<br>tapi yang paling tekun menggenggam akar.
+
+<p>Dan kamu,
+<br>masih bisa bertumbuh,
+<br>meski sudah banyak yang gugur.<p>
+
+  </div>
+
+  <div id="bangkit" class="content hidden">
+    <h2>Sajak Bangkit dari Lupa</h2>
+    <p></p>"Bangkit dari Lupa"<p></p>
+<p>Ada masa,
+<br>ketika aku lupa bagaimana caranya menjadi aku.
+<br>Lupa cara tersenyum tanpa alasan,
+<br>lupa caranya percaya tanpa ragu.
+
+<p>Tapi waktu tak pernah benar-benar pergi.
+<br>Ia menunggu,
+<br>diam-diam menumbuhkan tunas
+<br>di tanah yang kutinggalkan.
+
+<p>Bangkit,
+<br>bukan berarti harus kembali utuh.
+<br>Kadang cukup dengan merangkak
+<br>sambil membawa serpihan harapan yang sempat tercecer.
+
+<p>Luka bukan akhir,
+<br>ia hanya ladang yang pernah ditinggalkan musim.
+<br>Dan aku kini belajar kembali menjadi hujan,
+<br>meski hanya setetes,
+<br>asal bisa tumbuh lagi—
+<br>meski pelan.<p>
+    
+  </div>
+
+  <div id="galeri" class="content hidden">
+    <h2>Galeri Kata</h2>
+    <p></p>🌱 "Ada luka yang tidak berdarah, tapi tumbuh — seperti akar yang diam-diam mencengkeram tanah."<p></p>
+<p>🌾 "Kita ini benih, yang disimpan di musim kemarau, tapi tetap percaya akan datang hujan."
+<p>🌿 "Bahkan tanah paling tandus pun, bisa hidup kembali… kalau kau tahu cara menyentuhnya."
+<p>☀️ "Fotosintesis tak hanya soal cahaya, tapi soal percaya: bahwa yang gelap pun bisa jadi energi."
+<p>🌑 "Aku tidak sedang hilang. Aku hanya sedang berfotosintesis di dalam gelap."
+<p>🍂 "Jangan takut patah. Ranting pun tahu: ia hanya perlu musim untuk kembali kuat."
+<p>🍄 "Rindu itu seperti jamur — tumbuh di tempat yang lembab dan sunyi, tak pernah bisa ditebak."
+<p>🧺 "Hidup adalah hasil panen dari benih yang tak pernah kita sadari telah kita tanam."
+<p>🍁 "Kadang hati seperti daun, ia gugur bukan karena lemah, tapi karena waktunya tiba."
+<p>🌰 "Aku belajar dari biji: diam adalah cara tumbuh yang paling dalam."
+<p>🪴 "Bukan cahaya yang membuat tumbuhan kuat, tapi akar yang tak pernah terlihat."
+<p>💧 "Aku pernah jadi tanah keras. Tapi hujanmu membuatku gembur kembali."
+<p>🌶️ "Hidup ini seperti menanam cabai — hasilnya pedas, tapi kau tetap menikmatinya."
+<p>🍃 "Kau adalah klorofil dalam hidupku — sederhana, tapi membuat segalanya tetap hijau."
+<p>🧬 "Biologi mengajarkanku satu hal: yang terluka pun bisa menyembuhkan, asal dibiarkan tumbuh."
+<p>🌧️ "Hujan yang terlalu sering pun bisa bikin busuk. Begitu juga harapan yang tak pernah diurus."
+<p>"Aku ini petani, tapi ladang yang kutunggu panennya… malah kamu."
+<p>🌼 "Setiap tangismu adalah pupuk, yang diam-diam menyuburkan ladang hatimu."
+<p>🌾 "Kita ini hasil persilangan antara rindu yang tak selesai dan harapan yang terlalu keras kepala."
+<p>"Ada jenis tumbuh yang tak perlu terlihat — seperti hatimu, yang diam-diam belajar sembuh."<p></p>
+
+  </div>
+
+  <div id="kontak" class="content hidden">
+    <h2>Kontak</h2>
+    <p>Instagram: <a href="https://instagram.com/ainul_marrang" target="_blank">@ainul_marrang</a><br>
+       Facebook: <a href="https://facebook.com/ainul" target="_blank">Ainul</a><br>
+       Email: za2328490@gmail.com
+       WhatsApp : 085396047539
+    </p>
+  </div>
+
+<nav><button onclick="showSection('tulisrasa')">✍️ Tulis Rasa</button>
+ <div id="tulisrasa" class="content hidden">
+  <h2>Tulis Rasa</h2>
+  <p>Biarkan satu kalimatmu malam ini tinggal di halaman ini.</p>
+  <textarea id="rasaInput" rows="3" placeholder="Tulis satu kalimat rasa..."></textarea><br>
+  <button onclick="tambahRasa()">Peluk Rasa Ini</button>
+  <div id="hasilRasa" style="margin-top: 2rem;"></div>
+</div>
+<script>function tambahRasa() {
+  const input = document.getElementById('rasaInput');
+  const hasil = document.getElementById('hasilRasa');
+  const kalimat = input.value.trim();
+  if (kalimat.length > 0) {
+    const p = document.createElement('p');
+    p.textContent = `"${kalimat}"`;
+    p.style.opacity = 0;
+    p.style.transition = 'opacity 1s ease';
+    hasil.prepend(p);
+    setTimeout(() => { p.style.opacity = 1; }, 10);
+    input.value = '';
+  }
+}
+</script>
+  <footer>
+    <p>&copy; 2025 DariAinul.com | Ditulis dari sunyi oleh Zainul Abidin</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(section => {
+        section.classList.add('hidden');
+        section.classList.remove('active');
+      });
+      const target = document.getElementById(id);
+      target.classList.remove('hidden');
+      setTimeout(() => {
+        target.classList.add('active');
+      }, 10);
+    }
+
+    function enterSite() {
+      const cover = document.getElementById('cover');
+      cover.style.opacity = '0';
+      setTimeout(() => {
+        cover.style.display = 'none';
+      }, 1000);
+    }
+  </script>
+</body>
+<div class="daun-jatuh">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C15 6 19 9 20 12C21 15 18 17 14 19C10 21 6 21 4 17C2 13 6 8 9 4C10 2.5 11 2 12 2Z" fill="#A8D5BA" />
+  </svg>
+</div>
+
+<style>
+  .daun-jatuh {
+    position: fixed;
+    top: -40px;
+    left: 10vw;
+    width: 24px;
+    height: 24px;
+    z-index: 30;
+    animation: jatuhPelan 15s ease-in-out infinite;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @keyframes jatuhPelan {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(50vh) rotate(90deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+
+</html>
